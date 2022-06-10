@@ -1,0 +1,44 @@
+@import '../../../assets/styles/variables.scss';
+
+.k-map-box {
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+.k-map-box, .k-map {
+  position: relative;
+  height: 100%;
+  width: 100%
+}
+.k-map--invert {
+  .ol-viewport {
+    filter: brightness(0.83) contrast(0.93) grayscale(0) hue-rotate(0deg) opacity(1) saturate(0.99) sepia(1) invert(1);
+  }
+}
+
+.k-map-fullscreen {
+  left: initial;
+  top: 0.5em;
+  right: 0.5em;
+  background: rgba(0, 0, 0, 0.1);
+
+  &:focus, &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  button {
+    background-color: $background-color;
+    cursor: pointer;
+    color: $text-color;
+    outline: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+      background-color: #fff;
+      outline-color: inherit;
+    }
+  }
+}
