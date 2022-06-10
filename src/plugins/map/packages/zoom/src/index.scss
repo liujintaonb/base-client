@@ -1,0 +1,81 @@
+@import '../../../assets/styles/variables.scss';
+
+@mixin zoom-theme($wrapper, $background, $color) {
+  &.ol-control {
+    background-color: $wrapper;
+  }
+
+  button {
+    background-color: $background;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+      background-color: #fff;
+      outline-color: inherit;
+    }
+  }
+
+  &.ol-zoom-in, &.ol-zoom-out {
+    cursor: pointer;
+    background-color: $background;
+    color: $color;
+    outline: none;
+  }
+
+  &.ol-zoomslider {
+    cursor: move;
+  }
+
+  &.ol-zoom-slider-thumb {
+    background-color: $background;
+    outline: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.k-map-zoom {
+  @include zoom-theme(rgba(0, 0, 0, 0.1), $background-color, $text-color);
+
+  &.is-right-top {
+    &.ol-zoom, &.ol-zoomslider {
+      left: initial;
+      right: 0.5em;
+    }
+  }
+
+  &.is-left-bottom {
+    &.ol-zoom {
+      top: initial;
+      bottom: 0.5em;
+    }
+
+    &.ol-zoomslider {
+      top: initial;
+      bottom: 4.5em;
+    }
+  }
+
+  &.is-right-bottom {
+    &.ol-zoom {
+      top: initial;
+      bottom: 0.5em;
+      left: initial;
+      right: 0.5em;
+    }
+
+    &.ol-zoomslider {
+      top: initial;
+      bottom: 4.5em;
+      left: initial;
+      right: 0.5em;
+    }
+  }
+
+}

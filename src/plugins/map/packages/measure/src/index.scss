@@ -1,0 +1,45 @@
+@import '../../../assets/styles/variables.scss';
+
+.k-map-measure {
+  &__help, &__tip {
+    background: $background-color;
+    border-radius: $border-radius;
+    color: $text-color;
+    box-shadow: $shadow;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  &__tip {
+    &::before {
+      border-top: 6px solid $background-color;
+      border-right: 6px solid transparent;
+      border-left: 6px solid transparent;
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      margin-left: -7px;
+      left: 50%;
+    }
+  }
+
+  &__delete {
+    position: relative;
+    color: $warning-color;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
